@@ -20,3 +20,7 @@ app.get('/', async (req, res) => {
         res.status(500).send(error.message); 
     }
 });
+
+app.listen(PORT, '0.0.0.0',  () => {
+    console.log(`Server is running on port ${PORT}`);
+});
