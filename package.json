@@ -4,7 +4,7 @@
   },
 
   "scripts": {
-    "start": "npx --yes concurrently \"npm run server\" \"npm run client\"",
+    "start": "node ./node_modules/concurrently/dist/bin/concurrently.js \"npm run server\" \"npm run client\"",
     "server": "cd Backend && npm run dev",
     "client": "cd Frontend && npm run dev"
   }
