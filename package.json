@@ -1,21 +1,11 @@
 {
-  "name": "renderdeploy",
-  "version": "1.0.0",
-  "description": "",
-  "license": "ISC",
-  "author": "",
-  "type": "module",
-  "main": "index.js",
+  "dependencies": {
+    "concurrently": "^10.0.5"
+  },
+
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "node index.js",
+    "server": "cd Backend && npm run dev",
     "client": "cd Frontend && npm run dev"
-  },
-  "dependencies": {
-    "concurrently": "^10.0.5",
-    "cors": "^2.8.6",
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1",
-    "pg": "^8.23.0"
   }
 }
