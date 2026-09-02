@@ -7,10 +7,12 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node index.js",
+    "client": "cd Frontend && npm run dev"
   },
   "dependencies": {
+    "concurrently": "^10.0.5",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
