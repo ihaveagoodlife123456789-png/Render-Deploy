@@ -26,8 +26,8 @@ export function Front() {
 }, []);
 
     return (
-    <div className="size-full bg-slate-950/80 flex justify-center items-center">
-      <div className="h-full w-[45%] flex flex-col justify-center">
+    <div className="text white size-full bg-slate-950/80 flex justify-center items-center">
+      <div className="size-full `h-full w-[45%] flex flex-col justify-center">
         {
             users.map((user, id) => {
                 return (
