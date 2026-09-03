@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export async function FrontPage() {
+export function FrontPage() {
     const [users, setUsers] = useState([])
 
     useEffect(async () => {
