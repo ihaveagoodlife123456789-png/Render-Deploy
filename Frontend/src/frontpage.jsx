@@ -3,7 +3,9 @@ import { useState, useEffect } from 'react'
 export function FrontPage() {
     const [users, setUsers] = useState([])
 
-    useEffect(async () => {
+    useEffect(() => {
+
+        const fetchUsers = async () => {
     try {
         const response = await fetch('/')
 
@@ -17,6 +19,9 @@ export function FrontPage() {
     } catch (error) {
         console.log(error.message);
     }
+}
+
+  fetchUsers();
 }, []);
 
     return (
@@ -25,11 +30,11 @@ export function FrontPage() {
         {
             users.map((user, id) => {
                 return (
-                    <>
-                      <h2 key={id}>{user.id}</h2>
-                      <h2 key={id}>{user.name}</h2>
-                      <h3 key={id}>{user.message}</h3>
-                    </>
+                    <div key={id} className="flex flex-col justify-center items-center bg-slate-950/80 border-2 border-slate-950/80 rounded-lg p-4 m-4">
+                      <h2>{user.id}</h2>
+                      <h2>{user.name}</h2>
+                      <h3>{user.message}</h3>
+                    </div>
                 )
             })
         }
