@@ -24,9 +24,9 @@ app.get('/api/users', async (req, res) => {
 
 app.use(express.static(path.join(process.cwd(), '../Frontend/dist')));
 
-app.get(/^(?!\/api).*/, (req, res) => {
-    res.sendFile(path.join(process.cwd(), '../Frontend/dist/index.html'));
-});
+//app.get(/^(?!\/api).*/, (req, res) => {
+   // res.sendFile(path.join(process.cwd(), '../Frontend/dist/index.html'));
+//});
 
 const PORT = process.env.PORT || 3000; 
 
