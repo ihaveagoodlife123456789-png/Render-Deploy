@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get('/', async (req, res) => {
+app.get('/api/users', async (req, res) => {
     try {
         const result = await pool.query('SELECT * FROM users');
 
@@ -14,18 +14,18 @@ app.get('/', async (req, res) => {
             return res.status(404).send('Failed to fetch users');
         }
         
-        res.send(result.rows);
+        res.json(result.rows);
         console.log(result.rows);
     } catch (error) {
         res.status(500).send(error.message); 
     }
 });
 
-app.use(express.static('../Frontend/dist'));
+app.use(express.static(path.join(process.cwd(), '../Frontend/dist')));
 
-/*app.get('*', (req,res) => {
-    res.sendFile()
-})*/
+app.get('*', (req, res) => {
+    res.sendFile(path.join(process.cwd(), '../Frontend/dist/index.html'));
+});
 
 const PORT = process.env.PORT || 3000; 
 

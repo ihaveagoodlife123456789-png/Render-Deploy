@@ -1,10 +1,7 @@
 import { useState, useEffect } from 'react'
 
-<<<<<<< HEAD
 export function Front() {
-=======
-export function FrontPage() {
->>>>>>> 9b0c2b0c4c311e4abe11c243a7e3d8d1a3695fe5
+
     const [users, setUsers] = useState([])
 
     useEffect(() => {
