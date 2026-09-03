@@ -7,7 +7,7 @@ export function FrontPage() {
 
         const fetchUsers = async () => {
     try {
-        const response = await fetch('/')
+        const response = await fetch('https://render-deploy-9p38.onrender.com/')
 
         if(!response.ok) {
             throw new Error('Failed to fetch users');
