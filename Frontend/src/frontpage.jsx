@@ -8,7 +8,7 @@ export function Front() {
 
         const fetchUsers = async () => {
     try {
-        const response = await fetch('https://render-deploy-9p38.onrender.com/')
+        const response = await fetch('https://render-deploy-9p38.onrender.com/api/users');
 
         if(!response.ok) {
             throw new Error('Failed to fetch users');
