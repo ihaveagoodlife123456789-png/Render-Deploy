@@ -24,7 +24,7 @@ app.get('/api/users', async (req, res) => {
 
 app.use(express.static(path.join(process.cwd(), '../Frontend/dist')));
 
-app.get('*', (req, res) => {
+app.get(/^(?!\/api).*/, (req, res) => {
     res.sendFile(path.join(process.cwd(), '../Frontend/dist/index.html'));
 });
 
