@@ -26,19 +26,20 @@ export function Front() {
 }, []);
 
     return (
-  <div className="size-full bg-slate-950/80 flex justify-center items-center">
-    <div className="h-full w-[45%] flex flex-col justify-center">
-      {/* Debug: show users state */}
-      <p style={{color: 'white'}}>{JSON.stringify(users)}</p>
-
-      {users.map((user, id) => (
-        <div key={id} className="...">
-          <h2>{user.id}</h2>
-          <h2>{user.name}</h2>
-          <h3>{user.message}</h3>
-        </div>
-      ))}
+    <div className="size-full bg-slate-950/80 flex justify-center items-center">
+      <div className="h-full w-[45%] flex flex-col justify-center">
+        {
+            users.map((user, id) => {
+                return (
+                    <div key={id} className="flex flex-col justify-center items-center bg-slate-950/80 border-2 border-slate-950/80 rounded-lg p-4 m-4">
+                      <h2>{user.id}</h2>
+                      <h2>{user.name}</h2>
+                      <h3>{user.message}</h3>
+                    </div>
+                )
+            })
+        }
+      </div>
     </div>
-  </div>
-)
+  )
 }
