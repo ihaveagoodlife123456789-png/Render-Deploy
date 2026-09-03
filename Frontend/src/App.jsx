@@ -1,6 +1,6 @@
-import { FrontPage } from './frontpage.jsx'
+import { Front } from './frontpage.jsx'
 
 export function FrontPage() {
 
-  return <FrontPage />
+  return <Front />
 }

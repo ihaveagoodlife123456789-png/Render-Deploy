@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
 
-export async function FrontPage() {
+export function Front() {
     const [users, setUsers] = useState([])
 
-    useEffect(async () => {
+    useEffect(() => {
+
+        const fetchUsers = async () => {
     try {
-        const response = await fetch('/')
+        const response = await fetch('https://render-deploy-9p38.onrender.com/')
 
         if(!response.ok) {
             throw new Error('Failed to fetch users');
@@ -17,6 +19,9 @@ export async function FrontPage() {
     } catch (error) {
         console.log(error.message);
     }
+}
+
+  fetchUsers();
 }, []);
 
     return (
@@ -25,11 +30,11 @@ export async function FrontPage() {
         {
             users.map((user, id) => {
                 return (
-                    <>
-                      <h2 key={id}>{user.id}</h2>
-                      <h2 key={id}>{user.name}</h2>
-                      <h3 key={id}>{user.message}</h3>
-                    </>
+                    <div key={id} className="flex flex-col justify-center items-center bg-slate-950/80 border-2 border-slate-950/80 rounded-lg p-4 m-4">
+                      <h2>{user.id}</h2>
+                      <h2>{user.name}</h2>
+                      <h3>{user.message}</h3>
+                    </div>
                 )
             })
         }
